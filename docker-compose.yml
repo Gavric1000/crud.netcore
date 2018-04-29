@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  automobilelab:
+    image: automobilelab
+    build:
+      context: ./AutomobileLab
+      dockerfile: Dockerfile
