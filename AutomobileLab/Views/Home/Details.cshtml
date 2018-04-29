@@ -1,0 +1,50 @@
+﻿@model AutomobileLab.Model.Auto
+
+@{
+ViewData["Title"] = "Details";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Детали авто</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Название модели
+            </th>
+            <th>
+                Тип модели
+            </th>
+            <th>
+                Год производства
+            </th>
+            <th>
+                Тип двигателя
+            </th>
+            <th>
+                Цена
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => Model.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.ModelType)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.ProductionYear)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.BackPackType)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Price)
+            </td>
+        </tr>
+
+    </tbody>
+</table>

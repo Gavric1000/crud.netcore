@@ -1,0 +1,61 @@
+﻿@model List<AutomobileLab.Model.Auto>
+
+@{
+ViewData["Title"] = "Index";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>Меню автомбилей</h2>
+               <form>
+                   <p>
+                       <a class="form-control" asp-controller="Home" asp-action="Add">Добавить новый автомобиль</a>
+                   </p>
+               </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Название модели
+                </th>
+                <th>
+                    Тип модели
+                </th>
+                <th>
+                    Год производства
+                </th>
+                <th>
+                    Тип двигателя
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModelType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductionYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BackPackType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+}
+        </tbody>
+    </table>
+

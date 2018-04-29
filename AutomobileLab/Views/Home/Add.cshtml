@@ -1,0 +1,45 @@
+﻿@model AutomobileLab.Model.Auto
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Добавить авто</h2>
+<form class="form-horizontal">
+    <div class="container-fluid">
+        <div class="row">
+            <label class="control-label col-sm-2" for="email">Название модели</label>
+            <div class="col-sm-2 row">
+                @Html.EditorFor(modelItem => Model.ModelName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-sm-2" for="email">Тип модели</label>
+            <div class="col-sm-2 row">
+                @Html.EditorFor(modelItem => Model.ModelType, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="row">
+
+            <label class="control-label col-sm-2" for="email">Цена</label>
+            <div class="col-sm-2 row">
+                @Html.EditorFor(modelItem => Model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-sm-2" for="email">Год производства</label>
+            <div class="col-sm-2 row">
+                @Html.EditorFor(modelItem => Model.ProductionYear, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-sm-2" for="email">Тип двигателя</label>
+            <div class="col-sm-2 row">
+                @Html.EditorFor(modelItem => Model.BackPackType, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+    </div>
+    <input type="submit" name="submitbutton1" value="Сохранить" class="form-control"/>
+
+</form>
